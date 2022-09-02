@@ -3,7 +3,7 @@ import { theme } from './styles/theme';
 import axios from 'axios';
 import { useEffect } from 'react';
 
-function App() {
+const App = () => {
     useEffect(() => {
         // msw example
         // baseURL https:/fruitte.co/api/goods/5
@@ -33,6 +33,6 @@ function App() {
     }, []);
 
     return <ThemeProvider theme={theme}></ThemeProvider>;
-}
+};
 
 export default App;

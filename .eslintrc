@@ -1,10 +1,22 @@
 {
-    "extends": ["react-app", "eslint:recommended", "prettier"],
-    "rules": {
-        "no-var": "error",
-        "no-multiple-empty-lines": "error",
-        "eqeqeq": "error",
-        "dot-notation": "error",
-        "no-unused-vars": "warn"
-    }
+  "extends": ["react-app", "eslint:recommended"],
+  "plugins": ["prettier", "prefer-arrow"],
+  "rules": {
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": false,
+        "singleReturnOnly": true,
+        "classPropertiesAllowed": true
+      }
+    ],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+
+    "func-style": ["error", "expression"],
+    "no-var": "error",
+    "no-multiple-empty-lines": "error",
+    "eqeqeq": "error",
+    "dot-notation": "error",
+    "no-unused-vars": "warn"
+  }
 }
