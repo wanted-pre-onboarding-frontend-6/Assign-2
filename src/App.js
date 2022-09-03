@@ -4,6 +4,7 @@ import Router from './router';
 
 import axios from 'axios';
 import { useEffect } from 'react';
+import Router from './router';
 
 const App = () => {
     useEffect(() => {
