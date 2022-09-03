@@ -1,5 +1,6 @@
 {
-    "extends": ["react-app", "eslint:recommended", "prettier"],
+    "extends": ["react-app", "eslint:recommended"],
+    "plugins": ["prettier", "prefer-arrow"],
     "rules": {
         "no-var": "error",
         "no-multiple-empty-lines": "error",
