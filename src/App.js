@@ -2,11 +2,12 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import axios from 'axios';
 import { useEffect } from 'react';
+import Router from './router';
 
-function App() {
+const App = () => {
     useEffect(() => {
         // msw example
-        // baseURL https:/fruitte.co/api/goods/5
+        // baseURL https:/fruitte.co/api
         axios
             .get('https:/fruitte.co/api/goods/5')
             .then(response => console.log('goodsDetail', response))
@@ -32,7 +33,11 @@ function App() {
             });
     }, []);
 
-    return <ThemeProvider theme={theme}></ThemeProvider>;
-}
+    return (
+        <ThemeProvider theme={theme}>
+            <Router />
+        </ThemeProvider>
+    );
+};
 
 export default App;
