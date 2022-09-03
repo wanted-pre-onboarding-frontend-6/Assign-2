@@ -22,7 +22,16 @@ export const AdminHandler = [
                     soldFlag: faker.datatype.number({ min: 0, max: 1 }),
                 })),
         };
-
         return res(ctx.json(dummyProdAll));
+    }),
+
+    rest.delete('https:/fruitte.co/api/admin/goods/:goodsId', (req, res, ctx) => {
+        const goodsId = req.params.goodsId;
+        return res(ctx.json(goodsId));
+    }),
+
+    rest.put('https:/fruitte.co/api/admin/goods/:goodsId/showflag', (req, res, ctx) => {
+        const { showFlag } = req.body;
+        return res(ctx.json(showFlag));
     }),
 ];
