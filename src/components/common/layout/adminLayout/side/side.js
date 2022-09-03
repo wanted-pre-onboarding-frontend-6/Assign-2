@@ -26,4 +26,5 @@ const SdieLogo = styled.div`
     border-top: 3px solid ${({ theme }) => theme.subColor};
     border-bottom: 3px solid ${({ theme }) => theme.subColor};
     padding: 24px 0;
+    font-weight: bold;
 `;

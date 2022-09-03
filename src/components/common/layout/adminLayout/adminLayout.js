@@ -6,10 +6,10 @@ const AdminLayout = ({ children, type }) => {
     return (
         <>
             <AdminLayoutHeader />
-            <>
+            <div style={{ display: 'flex' }}>
                 {type !== 'login' && <AdminLayoutSide />}
                 {children}
-            </>
+            </div>
         </>
     );
 };
