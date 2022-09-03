@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const App = () => {
     useEffect(() => {
         // msw example
-        // baseURL https:/fruitte.co/api/goods/5
+        // baseURL https:/fruitte.co/api
         axios
             .get('https:/fruitte.co/api/goods/5')
             .then(response => console.log('goodsDetail', response))
