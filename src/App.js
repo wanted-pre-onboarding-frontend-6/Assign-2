@@ -1,5 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
+import Router from './router';
+
 import axios from 'axios';
 import { useEffect } from 'react';
 
@@ -32,7 +34,11 @@ const App = () => {
             });
     }, []);
 
-    return <ThemeProvider theme={theme}></ThemeProvider>;
+    return (
+        <ThemeProvider theme={theme}>
+            <Router />
+        </ThemeProvider>
+    );
 };
 
 export default App;
