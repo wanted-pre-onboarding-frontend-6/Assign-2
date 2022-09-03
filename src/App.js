@@ -1,5 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
+import Router from './router';
+
 import axios from 'axios';
 import { useEffect } from 'react';
 import Router from './router';
