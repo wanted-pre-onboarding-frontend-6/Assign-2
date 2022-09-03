@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import axios from 'axios';
 import { useEffect } from 'react';
+import Router from './router';
 
 const App = () => {
     useEffect(() => {
@@ -32,7 +33,11 @@ const App = () => {
             });
     }, []);
 
-    return <ThemeProvider theme={theme}></ThemeProvider>;
+    return (
+        <ThemeProvider theme={theme}>
+            <Router />
+        </ThemeProvider>
+    );
 };
 
 export default App;
