@@ -2,25 +2,29 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export function OrderList() {
-    const [orders, setOrders] = useState([]);
+export default function OrderList() {
+    const [order, setOrder] = useState([]);
     const now = new Date();
     const year = now.getFullYear();
     const month = now.getMonth();
     const date = now.getDate();
+    const newOrder = {
+        ...order,
+        prodPrice: order.prodPrice?.replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+    };
+    const { salePrice, prodImg, prodName, prodPrice, id } = newOrder;
 
     useEffect(() => {
         axios
             .get('https:/fruitte.co/api/goods/5')
             .then(response => {
-                setOrders(response.data);
+                setOrder(response.data);
             })
             .catch(err => {
                 console.error(err);
                 throw new Error(err);
             });
     }, []);
-
     return (
         <>
             <OrderDate>
@@ -36,14 +40,14 @@ export function OrderList() {
                 </Category>
                 <tbody>
                     <tr>
-                        <td>{orders.salePrice}</td>
+                        <td>{salePrice}</td>
                         <Product>
-                            <Img src={orders.prodImg?.src} alt={orders.prodName} />
+                            <Img src={prodImg?.src} alt={prodName} />
                             <Detail>
-                                <div>{orders.prodName}</div>
-                                <div>[옵션] {orders.prodName}</div>
-                                <div>수량: {orders.id}개</div>
-                                <div>{orders.prodPrice}원</div>
+                                <div>{prodName}</div>
+                                <div>[옵션] {prodName}</div>
+                                <div>수량: {id}개</div>
+                                <div>{prodPrice}원</div>
                             </Detail>
                         </Product>
                         <State>
@@ -83,6 +87,7 @@ const Product = styled.td`
     display: flex;
     text-align: left;
     margin: 25px 0;
+    width: 300px;
 `;
 
 const Img = styled.img`
