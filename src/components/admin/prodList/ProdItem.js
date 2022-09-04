@@ -83,9 +83,10 @@ const ProdItem = ({ curData, setCurData, data, idx }) => {
 export default ProdItem;
 
 const ProdItemWrapper = styled.li`
-    width: 80%;
+    width: 70%;
     margin-bottom: 20px;
     border: 1px solid;
+    background-color: #fff;
 `;
 const ProdItemHeader = styled.div`
     display: flex;
