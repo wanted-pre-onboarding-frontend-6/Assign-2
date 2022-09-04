@@ -4,8 +4,11 @@ import { rest } from 'msw';
 
 export const ClientHandler = [
     rest.get('https:/fruitte.co/api/goods', async (req, res, ctx) => {
+        const page = req.url.searchParams.get('page');
         const dummyProdAll = {
-            data: Array(95)
+            totalPage: 10,
+            currentPage: page,
+            data: Array(32)
                 .fill()
                 .map(() => ({
                     id: shortId.generate(),
@@ -18,6 +21,8 @@ export const ClientHandler = [
                     soldOutFlag: faker.datatype.number({ min: 0, max: 1 }),
                     mdFlag: faker.datatype.number({ min: 0, max: 1 }),
                     previewCount: faker.datatype.number({ min: 0, max: 10 }),
+                    favoriteCount: faker.datatype.number({ min: 0, max: 999 }),
+                    reviewCount: faker.datatype.number({ min: 0, max: 999 }),
                 })),
         };
 
