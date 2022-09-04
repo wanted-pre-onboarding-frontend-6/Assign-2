@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import ProdItem from '../../components/admin/prodList/ProdItem';
 import AdminService from '../../services/admin/adminService';
 
 const AdminProdListPage = () => {
@@ -25,13 +27,23 @@ const AdminProdListPage = () => {
     }, [curPage]);
 
     return (
-        <main>
-            <div>
+        <ProdListPageMain>
+            <ProdItemContainer>
                 {curData.map(it => (
-                    <div key={it.id}> {it.id}</div>
+                    <ProdItem key={it.id} data={it}>
+                        {' '}
+                    </ProdItem>
                 ))}
-            </div>
-        </main>
+            </ProdItemContainer>
+        </ProdListPageMain>
     );
 };
 export default AdminProdListPage;
+
+const ProdListPageMain = styled.main`
+    width: 100%;
+    margin: 30px 30px;
+`;
+const ProdItemContainer = styled.div`
+    margin: 0 atuo;
+`;
