@@ -1,30 +1,26 @@
 import styled from 'styled-components';
-import Footer from '../../../components/client/footer/footer';
 import OrderList from '../../../components/client/orders/orderList';
 
 export default function Orders() {
     return (
-        <>
-            <Container>
-                <Aside>
-                    <Profile>
-                        <Photo />
-                        <div>user님</div>
-                    </Profile>
-                    <Menu>
-                        <div>배송지 관리</div>
-                        <div>쿠폰 내역</div>
-                        <div>적립금 내역</div>
-                        <div>교환/환불 신청</div>
-                    </Menu>
-                </Aside>
-                <section>
-                    <Title>주문 내역</Title>
-                    <OrderList />
-                </section>
-            </Container>
-            <Footer />
-        </>
+        <Container>
+            <Aside>
+                <Profile>
+                    <Photo />
+                    <div>user님</div>
+                </Profile>
+                <Menu>
+                    <div>배송지 관리</div>
+                    <div>쿠폰 내역</div>
+                    <div>적립금 내역</div>
+                    <div>교환/환불 신청</div>
+                </Menu>
+            </Aside>
+            <section>
+                <Title>주문 내역</Title>
+                <OrderList />
+            </section>
+        </Container>
     );
 }
 
