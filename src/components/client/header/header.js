@@ -1,18 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../../../assets/client/fruitte_logo.jpg';
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const goToClient = () => {
+        navigate('/');
+    };
+
+    const goToAdmin = () => {
+        navigate('/admin');
+    };
+
     return (
         <Wrapper>
-            <LogoWrapper>logo</LogoWrapper>
-            <GNBWrapper>
-                <GNBButton>client</GNBButton>
-                <GNBButton>admin</GNBButton>
-            </GNBWrapper>
-            <SignWrapper>
+            <LogoWrapper>
+                <img src={logo} alt="fruitte_logo" />
+            </LogoWrapper>
+            <GNBContainer>
+                <GNBButton onClick={goToClient}>Client</GNBButton>
+                <GNBButton onClick={goToAdmin}>Admin</GNBButton>
+            </GNBContainer>
+            <SignContainer>
                 <SignButton>login</SignButton>
                 <SignButton>join</SignButton>
-            </SignWrapper>
+            </SignContainer>
         </Wrapper>
     );
 };
@@ -23,17 +37,29 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100vw;
     height: 80px;
-    /* border: 1px solid black; */
+    border-bottom: 1px solid #e6e6e6;
+`;
+
+const LogoWrapper = styled.div`
+    width: 200px;
+    margin-left: 20px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`;
+
+const GNBContainer = styled.div`
+    display: flex;
 `;
 
 const LogoWrapper = styled.div`
     margin: 0 20px;
-    /* border: 1px solid red; */
 `;
 
 const GNBWrapper = styled.div`
     display: flex;
-    /* border: 1px solid green; */
 `;
 
 const GNBButton = styled.div`
@@ -43,13 +69,20 @@ const GNBButton = styled.div`
     width: 100px;
     height: 40px;
     margin: 10px 20px;
-    /* border: 1px solid blueviolet; */
+    font-size: 20px;
+    cursor: pointer;
+`;
+
+const SignContainer = styled.div`
+    display: flex;
+    justify-content: end;
+    width: 200px;
+    margin-right: 20px;
     cursor: pointer;
 `;
 
 const SignWrapper = styled.div`
     display: flex;
-    /* border: 1px solid blue; */
 `;
 
 const SignButton = styled.div`
