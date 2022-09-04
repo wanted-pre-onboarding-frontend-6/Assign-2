@@ -5,6 +5,7 @@ import AdminProdPage from './pages/admin/prodPage';
 import GlobalStyle from './styles/global';
 import AdminRoute from './utils/adminRoute';
 import Main from './pages/client/main/main';
+import ProductPage from './pages/client/ProductListPage';
 import Order from './pages/client/order/order';
 
 const Router = () => {
@@ -14,6 +15,7 @@ const Router = () => {
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Main />} />
+                    <Route path="/fruitstore" element={<ProductPage />} />
                     <Route path="/order" element={<Order />} />
                     <Route element={<AdminRoute />}>
                         <Route path="/admin" element={<AdminLoginPage />} />
