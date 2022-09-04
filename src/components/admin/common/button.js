@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-const CommonButton = ({ text, color, bgColor }) => {
-    console.log(color, bgColor);
+const CommonButton = ({ text, color, bgColor, onClick }) => {
     return (
-        <CommonButtonTemplate color={color} bgColor={bgColor}>
+        <CommonButtonTemplate color={color} bgColor={bgColor} onClick={onClick}>
             {text}
         </CommonButtonTemplate>
     );

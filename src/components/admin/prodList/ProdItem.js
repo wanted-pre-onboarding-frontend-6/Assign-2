@@ -1,10 +1,24 @@
 import styled from 'styled-components';
 import CommonButton from '../common/button';
 import CommonLabel from '../common/label';
+import AdminService from '../../../services/admin/adminService';
 
-const ProdItem = ({ data }) => {
+const ProdItem = ({ curData, setCurData, data, idx }) => {
     const changedPrice = data.salePrice.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
     const slicedText = data.prodDetail.slice(0, 100);
+
+    const onRemoveProdItem = async () => {
+        try {
+            const res = await AdminService.remove(idx);
+            if (res.status === 200) {
+                const newData = curData.filter((_, i) => i !== idx);
+                setCurData(newData);
+            }
+        } catch (err) {
+            console.error(err);
+            throw new Error(err);
+        }
+    };
 
     return (
         <ProdItemWrapper>
@@ -32,7 +46,12 @@ const ProdItem = ({ data }) => {
                 </div>
                 <ButtonWrapper>
                     <CommonButton text="수정" color="#61CA3C" bgColor="#fff" />
-                    <CommonButton text="삭제" color="#fff" bgColor="#61CA3C" />
+                    <CommonButton
+                        text="삭제"
+                        color="#fff"
+                        bgColor="#61CA3C"
+                        onClick={onRemoveProdItem}
+                    />
                 </ButtonWrapper>
             </ProdItemContent>
         </ProdItemWrapper>

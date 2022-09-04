@@ -29,8 +29,8 @@ const AdminProdListPage = () => {
     return (
         <ProdListPageMain>
             <ProdItemContainer>
-                {curData.map(it => (
-                    <ProdItem key={it.id} data={it}>
+                {curData.map((it, idx) => (
+                    <ProdItem key={it.id} curData={curData} setCurData={setCurData} data={it} idx={idx}>
                         {' '}
                     </ProdItem>
                 ))}
