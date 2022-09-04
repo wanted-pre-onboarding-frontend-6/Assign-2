@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import logo from '../../../assets/img/logo.png';
+import { useInput } from '../../../hooks/useInupt';
 import Button from '../../common/button/button';
 import Input from '../../common/input/input';
 
 const AdminLoginForm = () => {
+    const [email, onChangeEmail] = useInput('');
+    const [password, onChangePassword] = useInput('');
+
     return (
         <LoginFromTemplate>
             <div className="logo">

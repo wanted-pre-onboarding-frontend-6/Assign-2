@@ -3,12 +3,16 @@ import styled from 'styled-components';
 const ProdTable = ({ type }) => {
     return (
         <TableTemplate type={type}>
-            <tr>
-                <td>{type === 'option' ? '1 KG' : '품목 또는 명칭'}</td>
-                <td>
-                    {type === 'option' ? '10,000원' : '국산 강원도 화천 생 아스파라거스 1kg 2kg'}
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>{type === 'option' ? '1 KG' : '품목 또는 명칭'}</td>
+                    <td>
+                        {type === 'option'
+                            ? '10,000원'
+                            : '국산 강원도 화천 생 아스파라거스 1kg 2kg'}
+                    </td>
+                </tr>
+            </tbody>
         </TableTemplate>
     );
 };
@@ -18,8 +22,9 @@ const TableTemplate = styled.table`
     border: 1px solid ${props => props.theme.mainColor};
     border-collapse: collapse;
     width: 100%;
+    margin: 16px 0;
 
-    & > tr {
+    & tr {
         padding: 8px 0;
         background-color: #fff;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { AdminSubject } from '../../../styles/common';
 import Button from '../../common/button/button';
 import Input from '../../common/input/input';
 import ProdTable from './table/prodTable';
@@ -7,7 +8,7 @@ const ProdOption = () => {
     return (
         <>
             <ProdOptionTemplate>
-                상품 옵션
+                <AdminSubject>상품 옵션</AdminSubject>
                 <ProdOptionForm>
                     <Input width="70%" mainColor="#fff" subColor="#222" />
                     <span>

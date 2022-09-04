@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { AdminSubject } from '../../../../styles/common';
 import ImageDorpozne from './dropZone/imageDrop';
 
 const ProdImage = () => {
     return (
         <>
-            이미지 등록 (최대 10개)
+            <AdminSubject>
+                이미지 등록 <span>(최대 10개)</span>
+            </AdminSubject>
             <InfoPreviewContainer>
                 {/* {files.map((v, index) =>
                             files.length <= 10 ? ( */}
