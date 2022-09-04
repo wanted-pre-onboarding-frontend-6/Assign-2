@@ -54,6 +54,14 @@ const GNBContainer = styled.div`
     display: flex;
 `;
 
+const LogoWrapper = styled.div`
+    margin: 0 20px;
+`;
+
+const GNBWrapper = styled.div`
+    display: flex;
+`;
+
 const GNBButton = styled.div`
     display: flex;
     justify-content: center;
@@ -70,6 +78,11 @@ const SignContainer = styled.div`
     justify-content: end;
     width: 200px;
     margin-right: 20px;
+    cursor: pointer;
+`;
+
+const SignWrapper = styled.div`
+    display: flex;
 `;
 
 const SignButton = styled.div`

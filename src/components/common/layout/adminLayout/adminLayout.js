@@ -6,11 +6,17 @@ const AdminLayout = ({ children, type }) => {
     return (
         <>
             <AdminLayoutHeader />
-            <div style={{ display: 'flex' }}>
+            <AdminLayoutMain>
                 {type !== 'login' && <AdminLayoutSide />}
                 {children}
-            </div>
+            </AdminLayoutMain>
         </>
     );
 };
 export default AdminLayout;
+
+const AdminLayoutMain = styled.div`
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+`;
