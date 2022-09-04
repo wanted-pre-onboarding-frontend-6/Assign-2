@@ -31,7 +31,7 @@ export const AdminHandler = [
     }),
 
     rest.put('https:/fruitte.co/api/admin/goods/:goodsId/showflag', (req, res, ctx) => {
-        const { showFlag } = req.body;
-        return res(ctx.json(showFlag));
+        const { showFlag, id } = req.body;
+        return res(ctx.json({ showFlag, id }));
     }),
 ];
