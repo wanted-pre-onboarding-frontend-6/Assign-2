@@ -5,6 +5,7 @@ import AdminProdPage from './pages/admin/prodPage';
 import GlobalStyle from './styles/global';
 import AdminRoute from './utils/adminRoute';
 import Main from './pages/client/main/main';
+import ProdDetail from './pages/client/prodDetail';
 
 const Router = () => {
     return (
@@ -13,6 +14,7 @@ const Router = () => {
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Main />} />
+                    <Route path="/prodDetail/:id" element={<ProdDetail />} />
                     <Route element={<AdminRoute />}>
                         <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
