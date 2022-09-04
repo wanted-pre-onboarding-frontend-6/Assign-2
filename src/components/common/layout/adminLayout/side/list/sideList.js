@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 const SideList = () => {
     const [sideLst, setSideList] = useState([
         {
             subject: { name: '상품관리', state: true },
             list: [
-                { name: '- 상품목록', state: true },
-                { name: '- 상품등록', state: false },
+                { name: '- 상품목록', state: true, link: '/prodList' },
+                { name: '- 상품등록', state: false, link: '/prod' },
             ],
         },
         {
@@ -64,11 +65,13 @@ const SideList = () => {
                     {v.subject.state &&
                         v.list &&
                         v.list.map((list, index) => (
-                            <ListItem parentData={index} state={list.state}>
-                                <li key={index} data={index} onClick={onListClick}>
-                                    {list.name}
-                                </li>
-                            </ListItem>
+                            <Link to={'/admin' + list.link}>
+                                <ListItem parentData={index} state={list.state}>
+                                    <li key={index} data={index} onClick={onListClick}>
+                                        {list.name}
+                                    </li>
+                                </ListItem>
+                            </Link>
                         ))}
                 </li>
             ))}

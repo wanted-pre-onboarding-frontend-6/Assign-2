@@ -1,2 +1,4 @@
-const ProdText = () => {};
+const ProdText = () => {
+    return <div></div>;
+};
 export default ProdText;

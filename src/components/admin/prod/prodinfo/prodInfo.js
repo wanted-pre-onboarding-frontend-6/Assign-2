@@ -1,22 +1,18 @@
 import styled from 'styled-components';
+import InfoDetail from './detail/infoDetial';
+import InfoIamge from './image/infoImage';
 
 const ProdInfo = () => {
     return (
-        <div style={{ dispaly: 'flex' }}>
-            <div></div>
-            <div>
-                <p></p>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+        <InfoTemplate>
+            <InfoIamge />
+            <InfoDetail />
+        </InfoTemplate>
     );
 };
 export default ProdInfo;
 
 const InfoTemplate = styled.div`
     display: flex;
+    align-items: center;
 `;
-
-const InfoMainImage = styled.div``;
