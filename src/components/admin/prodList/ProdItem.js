@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import CommonButton from '../common/button';
 import CommonLabel from '../common/label';
 import AdminService from '../../../services/admin/adminService';
+import { useState } from 'react';
 
 const ProdItem = ({ curData, setCurData, data, idx }) => {
     const changedPrice = data.salePrice.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
     const slicedText = data.prodDetail.slice(0, 100);
-
+    const [showFlag, setShowFlag] = useState(data.showFlag);
     const onRemoveProdItem = async () => {
         try {
             const res = await AdminService.remove(idx);
@@ -20,14 +21,35 @@ const ProdItem = ({ curData, setCurData, data, idx }) => {
         }
     };
 
+    const onEditItemShow = async () => {
+        try {
+            const res = await AdminService.edit(data.id, { showFlag: !showFlag });
+            if (res.status === 200) {
+                setShowFlag(prev => !prev);
+            }
+        } catch (err) {
+            console.error(err);
+            throw new Error(err);
+        }
+    };
+
     return (
         <ProdItemWrapper>
             <ProdItemHeader>
                 <h3>{data.prodName}</h3>
+                <CommonLabel
+                    text={showFlag ? '노출 중' : '비노출 중'}
+                    color="#fff"
+                    bgColor="#61CA3C"
+                />
                 <ShowButtonWrapper>
-                    <span>노출</span>
-                    <input type="checkbox" checked={data.showFlag ? true : false}></input>
-                    <span>비노출</span>
+                    <label htmlFor="showInput">{showFlag ? '숨겨놓기' : '보여주기'}</label>
+                    <input
+                        id="showInput"
+                        type="checkbox"
+                        checked={showFlag ? false : true}
+                        onChange={onEditItemShow}
+                    ></input>
                 </ShowButtonWrapper>
             </ProdItemHeader>
             <ProdItemContent>
@@ -67,6 +89,7 @@ const ProdItemWrapper = styled.li`
 `;
 const ProdItemHeader = styled.div`
     display: flex;
+    align-items: center;
     position: relative;
     padding: 10px 30px;
     border-bottom: 1px solid;
@@ -78,8 +101,22 @@ const ProdItemHeader = styled.div`
 const ShowButtonWrapper = styled.div`
     position: absolute;
     right: 30px;
-    > span {
-        font-size: 12px;
+    > label {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #d9d9d9;
+        cursor: pointer;
+    }
+    > input {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
     }
 `;
 

@@ -6,7 +6,11 @@ export default class AdminService {
         return res;
     }
     static remove(idx) {
-        const res = axiosApiInstance.delete(`/admin/goods/:${idx}`)
+        const res = axiosApiInstance.delete(`/admin/goods/:${idx}`);
+        return res;
+    }
+    static edit(id, showFlag) {
+        const res = axiosApiInstance.put(`/admin/goods/:${id}/showflag`, showFlag);
         return res;
     }
 }

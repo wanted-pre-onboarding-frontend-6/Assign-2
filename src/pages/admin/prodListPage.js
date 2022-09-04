@@ -30,7 +30,13 @@ const AdminProdListPage = () => {
         <ProdListPageMain>
             <ProdItemContainer>
                 {curData.map((it, idx) => (
-                    <ProdItem key={it.id} curData={curData} setCurData={setCurData} data={it} idx={idx}>
+                    <ProdItem
+                        key={it.id}
+                        curData={curData}
+                        setCurData={setCurData}
+                        data={it}
+                        idx={idx}
+                    >
                         {' '}
                     </ProdItem>
                 ))}
