@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Footer from '../../../components/client/footer/footer';
-import { OrderList } from '../../../components/client/orders/orderList';
+import OrderList from '../../../components/client/orders/orderList';
 
 export default function Orders() {
     return (
@@ -18,10 +18,10 @@ export default function Orders() {
                         <div>교환/환불 신청</div>
                     </Menu>
                 </Aside>
-                <content>
+                <section>
                     <Title>주문 내역</Title>
                     <OrderList />
-                </content>
+                </section>
             </Container>
             <Footer />
         </>
