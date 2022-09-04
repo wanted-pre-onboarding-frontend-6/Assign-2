@@ -1,10 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Pagination from '../../components/client/productList/Pagination';
+import ProductList from '../../components/client/productList/ProductList';
 
 const ProductPage = () => {
     const [products, setProducts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const postsPerPage = 12;
+    const numberOfProducts = products.length;
+    const numberOfPages = Math.ceil(numberOfProducts / postsPerPage);
+    const offset = (currentPage - 1) * postsPerPage;
 
     useEffect(() => {
         axios
@@ -19,61 +26,23 @@ const ProductPage = () => {
                 throw new Error(err);
             });
     }, []);
+
     return (
         <Container>
-            <ProductList>
-                {products.map(product => {
-                    const { id, prodName, prodImg, prodPrice, salePrice } = product;
-                    return (
-                        <ProductItem key={id}>
-                            <Link to={`/fruitstore/${id}`}>
-                                <ProductImg src={prodImg.src} alt={prodName} />
-                                <ProductInfo>
-                                    <ProductName>{prodName}</ProductName>
-                                    <p>{prodPrice}</p>
-                                </ProductInfo>
-                            </Link>
-                        </ProductItem>
-                    );
-                })}
-            </ProductList>
+            <ProductList products={products} postsPerPage={postsPerPage} offset={offset} />
+            <Pagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                numberOfPages={numberOfPages}
+            />
         </Container>
     );
 };
 
 const Container = styled.main`
     padding: 100px;
-    margin: 0 auto;
     padding-bottom: 100px;
-`;
-
-const ProductList = styled.ul`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 1920px;
-`;
-
-const ProductItem = styled.li`
-    width: calc(25% - 17px);
-    margin: 0 8.5px;
-`;
-
-const ProductImg = styled.img`
-    width: 100%;
-    vertical-align: top;
-`;
-
-const ProductInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-`;
-
-const ProductName = styled.h3`
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    margin: 0 auto;
 `;
 
 export default ProductPage;
