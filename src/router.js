@@ -12,9 +12,11 @@ const Router = () => {
             <BrowserRouter>
                 <GlobalStyle />
                 <Routes>
+                    {/* client */}
                     <Route path="/" element={<Main />} />
+                    {/* admin */}
+                    <Route path="/admin" element={<AdminLoginPage />} />
                     <Route element={<AdminRoute />}>
-                        <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
                         <Route exact path="/admin/prod" element={<AdminProdPage />} />
                     </Route>
