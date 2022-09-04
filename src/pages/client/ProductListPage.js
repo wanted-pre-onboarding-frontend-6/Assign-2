@@ -4,40 +4,35 @@ import styled from 'styled-components';
 import Pagination from '../../components/client/productList/Pagination';
 import ProductList from '../../components/client/productList/ProductList';
 
-const ProductPage = () => {
+function ProductListPage() {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-
-    const postsPerPage = 12;
-    const numberOfProducts = products.length;
-    const numberOfPages = Math.ceil(numberOfProducts / postsPerPage);
-    const offset = (currentPage - 1) * postsPerPage;
+    const [totalPage, setTotalPage] = useState(0);
 
     useEffect(() => {
         axios
             .get('https:/fruitte.co/api/goods?page=5')
             .then(({ data }) => {
-                console.log('goodsAll', data);
                 setProducts(data.data);
-                console.log('goodsAll', products);
+                setTotalPage(data.totalPage);
             })
             .catch(err => {
                 console.error(err);
                 throw new Error(err);
             });
-    }, []);
+    }, [currentPage]);
 
     return (
         <Container>
-            <ProductList products={products} postsPerPage={postsPerPage} offset={offset} />
+            <ProductList products={products} />
             <Pagination
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
-                numberOfPages={numberOfPages}
+                totalPage={totalPage}
             />
         </Container>
     );
-};
+}
 
 const Container = styled.main`
     padding: 100px;
@@ -45,4 +40,4 @@ const Container = styled.main`
     margin: 0 auto;
 `;
 
-export default ProductPage;
+export default ProductListPage;

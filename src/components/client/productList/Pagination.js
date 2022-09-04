@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Pagination({ currentPage, setCurrentPage, numberOfPages }) {
+function Pagination({ currentPage, setCurrentPage, totalPage }) {
     return (
         <Container>
             <PageButton
@@ -10,7 +10,7 @@ function Pagination({ currentPage, setCurrentPage, numberOfPages }) {
             >
                 &lt;
             </PageButton>
-            {Array(numberOfPages)
+            {Array(totalPage)
                 .fill()
                 .map((_, index) => (
                     <PageButton
@@ -23,7 +23,7 @@ function Pagination({ currentPage, setCurrentPage, numberOfPages }) {
                 ))}
             <PageButton
                 onClick={() => setCurrentPage(prev => prev + 1)}
-                disabled={currentPage === numberOfPages}
+                disabled={currentPage === totalPage}
             >
                 &gt;
             </PageButton>
