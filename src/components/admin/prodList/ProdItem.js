@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import CommonButton from '../common/button';
 import CommonLabel from '../common/label';
@@ -6,8 +7,9 @@ import { useState } from 'react';
 
 const ProdItem = ({ curData, setCurData, data, idx }) => {
     const changedPrice = data.salePrice.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-    const slicedText = data.prodDetail.slice(0, 100);
+    // const slicedText = data.prodDetail.slice(0, 80);
     const [showFlag, setShowFlag] = useState(data.showFlag);
+
     const onRemoveProdItem = async () => {
         try {
             const res = await AdminService.remove(idx);
@@ -54,9 +56,9 @@ const ProdItem = ({ curData, setCurData, data, idx }) => {
             </ProdItemHeader>
             <ProdItemContent>
                 <img src={data.prodImg.src}></img>
-                <div>
+                <ProdInfoWrapper>
                     <ProdItemName>상품명 : {data.prodName}</ProdItemName>
-                    <ProdItemDetail>상품소개 : {slicedText}</ProdItemDetail>
+                    <ProdItemDetail>상품소개 : {data.prodDetail}</ProdItemDetail>
                     <div>
                         <span>가격: {changedPrice}원</span>
                         <CommonLabel text="sale" color="#fff" bgColor="#F93939" />
@@ -65,7 +67,7 @@ const ProdItem = ({ curData, setCurData, data, idx }) => {
                             <CommonLabel text="SOLD OUT" bgColor="#D9D9D9" />
                         )}
                     </div>
-                </div>
+                </ProdInfoWrapper>
                 <ButtonWrapper>
                     <CommonButton text="수정" color="#61CA3C" bgColor="#fff" />
                     <CommonButton
@@ -80,7 +82,7 @@ const ProdItem = ({ curData, setCurData, data, idx }) => {
     );
 };
 
-export default ProdItem;
+export default React.memo(ProdItem);
 
 const ProdItemWrapper = styled.li`
     width: 70%;
@@ -88,6 +90,7 @@ const ProdItemWrapper = styled.li`
     border: 1px solid;
     background-color: #fff;
 `;
+
 const ProdItemHeader = styled.div`
     display: flex;
     align-items: center;
@@ -97,6 +100,10 @@ const ProdItemHeader = styled.div`
     > h3 {
         font-weight: bold;
     }
+`;
+
+const ProdInfoWrapper = styled.div`
+    width: 60%;
 `;
 
 const ShowButtonWrapper = styled.div`
@@ -139,6 +146,9 @@ const ProdItemName = styled.span`
 
 const ProdItemDetail = styled.div`
     color: #a8a8a8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const ButtonWrapper = styled.div`
