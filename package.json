@@ -1,16 +1,21 @@
 {
-<<<<<<< HEAD
     "name": "assing2",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@faker-js/faker": "^7.5.0",
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/react-fontawesome": "^0.2.0",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.27.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
+        "shortid": "^2.2.16",
         "styled-components": "^5.3.5",
         "web-vitals": "^2.1.4"
     },
@@ -46,70 +51,12 @@
         "@babel/eslint-parser": "^7.18.9",
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prefer-arrow": "^1.2.3",
         "eslint-plugin-prettier": "^4.2.1",
-        "husky": "^8.0.1",
+        "msw": "^0.46.1",
         "prettier": "^2.7.1"
+    },
+    "msw": {
+        "workerDirectory": "public"
     }
-=======
-  "name": "assing2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@faker-js/faker": "^7.5.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.27.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "shortid": "^2.2.16",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "postinstall": "husky",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --cache \"src/**/*.js\"",
-    "lint:fix": "eslint --fix --cache \"src/**/*.js\"",
-    "format": "prettier --write --cache \"src/**/*.js\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.18.9",
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^4.2.1",
-    "msw": "^0.46.1",
-    "prettier": "^2.7.1"
-  },
-  "msw": {
-    "workerDirectory": "public"
-  }
->>>>>>> main
 }
