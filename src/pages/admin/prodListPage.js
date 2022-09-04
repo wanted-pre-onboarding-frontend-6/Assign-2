@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProdItem from '../../components/admin/prodList/ProdItem';
 import Pagination from '../../components/admin/prodList/Pagination';
+import SearchHeader from '../../components/admin/prodList/SearchHeader';
 import AdminService from '../../services/admin/adminService';
 
 const AdminProdListPage = () => {
@@ -30,6 +31,7 @@ const AdminProdListPage = () => {
 
     return (
         <ProdListPageMain>
+            <SearchHeader />
             <ProdItemContainer>
                 {curData.map((it, idx) => (
                     <ProdItem
@@ -56,6 +58,7 @@ const ProdListPageMain = styled.main`
 `;
 const ProdItemContainer = styled.div`
     height: 90vh;
+    padding-bottom: 100px;
     margin: 0 atuo;
     overflow-y: scroll;
 `;
