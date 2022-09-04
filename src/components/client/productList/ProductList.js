@@ -2,14 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function ProductList({ products, offset, postsPerPage }) {
+function ProductList({ products }) {
     return (
-        <Container>
-            {products.slice(offset, offset + postsPerPage).map(product => {
-                const { id, prodName, prodImg, originalPrice, salePrice } = product;
+        <Wrapper>
+            {products.map(product => {
+                const {
+                    id,
+                    prodName,
+                    prodImg,
+                    originalPrice,
+                    salePrice,
+                    saleFlag,
+                    bestFlag,
+                    favoriteCount,
+                    reviewCount,
+                } = product;
                 return (
                     <ProductItem key={id}>
-                        <Link to={`/fruitstore/${id}`}>
+                        <Link to={`/prodDetail/${id}`}>
                             <ProductImg src={prodImg.src} alt={prodName} />
                             <ProductInfo>
                                 <ProductName>{prodName}</ProductName>
@@ -17,20 +27,28 @@ function ProductList({ products, offset, postsPerPage }) {
                                     <ProductPrice>{salePrice}원</ProductPrice>
                                     <OriginalPrice>{originalPrice}원</OriginalPrice>
                                 </PriceBlock>
+                                <ScoreBlock>
+                                    <FavoriteIcon>♡</FavoriteIcon>
+                                    <Score>{favoriteCount}</Score>
+                                    <ReviewBox>
+                                        리뷰
+                                        <Score>{reviewCount}</Score>
+                                    </ReviewBox>
+                                </ScoreBlock>
                                 <BoxBlock>
-                                    <SaleBox>SALE</SaleBox>
-                                    <BestBox>BEST</BestBox>
+                                    {Boolean(saleFlag) && <SaleBox>SALE</SaleBox>}
+                                    {Boolean(bestFlag) && <BestBox>BEST</BestBox>}
                                 </BoxBlock>
                             </ProductInfo>
                         </Link>
                     </ProductItem>
                 );
             })}
-        </Container>
+        </Wrapper>
     );
 }
 
-const Container = styled.ul`
+const Wrapper = styled.ul`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -108,6 +126,25 @@ const SaleBox = styled(BoxStyled)`
 const BestBox = styled(BoxStyled)`
     border: 1px solid ${({ theme }) => theme.mainColor};
     color: ${({ theme }) => theme.mainColor};
+`;
+
+const ScoreBlock = styled.div`
+    margin-top: 23px;
+    width: 100%;
+    max-height: 16px;
+    overflow: hidden;
+`;
+
+const FavoriteIcon = styled.i``;
+
+const Score = styled.em`
+    margin-left: 5px;
+`;
+
+const ReviewBox = styled.span`
+    margin-left: 14px;
+    padding-left: 16px;
+    border-left: 1px solid #e5e5e5;
 `;
 
 export default ProductList;
