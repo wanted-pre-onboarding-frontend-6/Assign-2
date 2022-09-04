@@ -6,6 +6,7 @@ import GlobalStyle from './styles/global';
 import AdminRoute from './utils/adminRoute';
 import Main from './pages/client/main/main';
 import ProductPage from './pages/client/ProductListPage';
+import Order from './pages/client/order/order';
 
 const Router = () => {
     return (
@@ -15,6 +16,7 @@ const Router = () => {
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/fruitstore" element={<ProductPage />} />
+                    <Route path="/order" element={<Order />} />
                     <Route element={<AdminRoute />}>
                         <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
@@ -25,5 +27,4 @@ const Router = () => {
         </>
     );
 };
-
 export default Router;
