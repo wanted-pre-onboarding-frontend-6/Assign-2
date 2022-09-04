@@ -41,16 +41,17 @@ export default Pagination;
 
 const PaginationContainer = styled.section`
     position: absolute;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     padding-top: 20px;
     background-color: #eee;
-    margin: 0 auto;
 `;
 const PaginationWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 60%;
+    justify-content: center;
+    width: calc(100%-240px);
 `;
 const PaginationButton = styled.button`
     background-color: #fff;

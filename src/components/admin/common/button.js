@@ -17,4 +17,5 @@ const CommonButtonTemplate = styled.button`
     color: ${props => props.color};
     background-color: ${props => props.bgColor};
     border: 1px solid ${props => props.color};
+    border-radius: 5px;
 `;

@@ -26,18 +26,17 @@ export default SearchHeader;
 
 const SearchHeaderContainer = styled.header`
     position: relative;
+    width: calc(100%-240px);
     display: flex;
-    width: 80%;
-    margin-bottom: 20px;
-    align-items: center;
-    /* justify-content: space-between; */
+    margin: 0 15% 40px;
+    justify-content: flex-start;
 `;
 
 const SerchInputWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 300px;
+    justify-content: start;
+    width: 30%;
     height: 40px;
     background-color: #fff;
     > input {
@@ -50,13 +49,16 @@ const SerchInputWrapper = styled.div`
         width: 20%;
         color: #fff;
         font-weight: bold;
-        background-color: green;
+        background-color: ${props => props.theme.mainColor};
     }
 `;
 
 const KeywordsWrapper = styled.div`
+    position: absolute;
+    right: 8%;
     width: 300px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
+    margin-left: 100px;
 `;
