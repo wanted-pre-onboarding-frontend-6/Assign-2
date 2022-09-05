@@ -1,9 +1,9 @@
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 
-const ImageDorpozne = () => {
+const ImageDorpozne = ({ onDropHandler }) => {
     return (
-        <Dropzone>
+        <Dropzone onDrop={onDropHandler}>
             {({ getRootProps, getInputProps }) => (
                 <InfoImageForm className="inputBox" {...getRootProps()}>
                     <input {...getInputProps()} id="file" />+<p>이미지를 등록해주세요</p>

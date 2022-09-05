@@ -1,28 +1,54 @@
+import { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { AdminSubject } from '../../../../styles/common';
 import ImageDorpozne from './dropZone/imageDrop';
 
-const ProdImage = () => {
+const ProdImage = ({ prodFiles, setProdFiles }) => {
+    const onDropHandler = useCallback(
+        files => {
+            if (prodFiles.map <= 10 || files.length <= 10) {
+                setProdFiles(
+                    files.map(file =>
+                        Object.assign(file, {
+                            preview: URL.createObjectURL(file),
+                        }),
+                    ),
+                );
+            } else {
+                alert('10개 이상의 파일을 등록할 수 없습니다');
+            }
+        },
+        [setProdFiles, prodFiles],
+    );
+
+    const onPreviewDelete = useCallback(
+        preview => {
+            const deleteFiles = prodFiles.filter(v => v.preview !== preview);
+            setProdFiles(deleteFiles);
+        },
+        [prodFiles],
+    );
+
     return (
         <>
             <AdminSubject>
                 이미지 등록 <span>(최대 10개)</span>
             </AdminSubject>
             <InfoPreviewContainer>
-                {/* {files.map((v, index) =>
-                            files.length <= 10 ? ( */}
-                <InfoPreviewWrapper>
-                    <div>
-                        <img />
-                        <p>파일 삭제</p>
-                    </div>
-                </InfoPreviewWrapper>
-                {/* ) : (
-                                <div>이미지는 최대 10개까지만 등록할 수 있습니다</div>
-                            ),
-                        )} */}
+                {prodFiles.map(v =>
+                    prodFiles.length <= 10 ? (
+                        <InfoPreviewWrapper onClick={() => onPreviewDelete(v.preview)}>
+                            <div>
+                                <img src={v.preview} />
+                                <p>파일 삭제</p>
+                            </div>
+                        </InfoPreviewWrapper>
+                    ) : (
+                        <div>이미지는 최대 10개까지만 등록할 수 있습니다</div>
+                    ),
+                )}
             </InfoPreviewContainer>
-            <ImageDorpozne />
+            <ImageDorpozne onDropHandler={onDropHandler} />
         </>
     );
 };
@@ -38,8 +64,8 @@ const InfoPreviewContainer = styled.div`
 `;
 
 const InfoPreviewWrapper = styled.div`
-    width: 9%;
-    height: 100%;
+    width: 96px;
+    height: 96px;
     z-index: 9999;
     margin: 4px;
     cursor: pointer;

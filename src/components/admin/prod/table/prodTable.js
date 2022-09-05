@@ -1,17 +1,21 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
-const ProdTable = ({ type }) => {
+const ProdTable = ({ type, data }) => {
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
     return (
         <TableTemplate type={type}>
             <tbody>
-                <tr>
-                    <td>{type === 'option' ? '1 KG' : '품목 또는 명칭'}</td>
-                    <td>
-                        {type === 'option'
-                            ? '10,000원'
-                            : '국산 강원도 화천 생 아스파라거스 1kg 2kg'}
-                    </td>
-                </tr>
+                {data.length > 0 &&
+                    data.map(v => (
+                        <tr>
+                            <td>{v.name}</td>
+                            <td>{v.content}</td>
+                        </tr>
+                    ))}
             </tbody>
         </TableTemplate>
     );
@@ -32,6 +36,7 @@ const TableTemplate = styled.table`
             padding-left: ${props => props.type === 'option' && '32px'};
             width: ${props => (props.type === 'option' ? '80%' : '40%')};
             text-align: ${props => (props.type === 'origin' ? 'center' : 'left')};
+            border: 1px solid ${props => props.theme.mainColor};
         }
 
         & > td:last-child {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import ProdImage from '../../components/admin/prod/prodImage/prodImage';
 import ProdInfo from '../../components/admin/prod/prodinfo/prodInfo';
@@ -7,13 +8,17 @@ import ProdText from '../../components/admin/prod/prodText';
 import Button from '../../components/common/button/button';
 
 const AdminProdPage = () => {
+    const [prodFiles, setProdFiles] = useState([]);
+    const [prodOption, setProdOtion] = useState([]);
+    const [prodOrigin, setProdOrigin] = useState([]);
+
     return (
         <AdminProdContainer>
             <ProdInfo />
-            <ProdImage />
-            <ProdOption />
+            <ProdImage prodFiles={prodFiles} setProdFiles={setProdFiles} />
+            <ProdOption prodOption={prodOption} setProdOtion={setProdOtion} />
             <ProdText />
-            <ProdOrign />
+            <ProdOrign prodOrigin={prodOrigin} setProdOrigin={setProdOrigin} />
             <Button size="full" height="38px" margin="16px 0 0 0" mainColor="#61CA3C">
                 등록
             </Button>

@@ -11,6 +11,8 @@ const Input = ({
     height,
     style,
     placeholder,
+    onChange,
+    value,
 }) => {
     return type === 'textarea' ? (
         <TextAreaWrapper
@@ -23,6 +25,8 @@ const Input = ({
             subColor={subColor}
             style={style}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
         ></TextAreaWrapper>
     ) : (
         <InputWrapper
@@ -36,6 +40,8 @@ const Input = ({
             subColor={subColor}
             style={style}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
         />
     );
 };
