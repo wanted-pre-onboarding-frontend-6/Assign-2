@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# 🕹 Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🎥 배포
 
-## Available Scripts
+👉 [배포링크]()
+<br />
 
-In the project directory, you can run:
+## 📌팀원 소개
 
-### `npm start`
+<table align="center">
+<tr >
+<td align="center"><a href="https://github.com/LoggingCo"><img  src="https://avatars.githubusercontent.com/LoggingCo" width="100%"  height="50%"/></a></td>
+<td align="center"><a href="https://github.com/sming0112"><img src="https://avatars.githubusercontent.com/sming0112" width="100%"  height="50%"/></a></td>
+<td align="center"><a href="https://github.com/YSBINN"><img src="https://avatars.githubusercontent.com/YSBINN" width="100%" height="50%" /></a></td>
+<td align="center"><a href="https://github.com/Leejha"><img src="https://avatars.githubusercontent.com/Leejha" width="100%"  height="50%"/></a></td>
+<td align="center"><a href="https://github.com/vnfdusdl"><img src="https://avatars.githubusercontent.com/vnfdusdl" width="100%"  height="50%"/></a></td>
+<td align="center"><a href="https://github.com/seriparkdev"><img src="https://avatars.githubusercontent.com/seriparkdev" width="100%"  height="50%"/></a></td>
+</tr>
+<tr>
+<td align="center"><b>김성용</b></td>
+<td align="center"><b>성민규</b></td>
+<td align="center"><b>임상빈</b></td>
+<td align="center"><b>이재하</b></td>
+<td align="center"><b>김초연</b></td>
+<td align="center"><b>박세리</b></td>
+</tr>
+<tr>
+<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>FE Developer</b></td>
+</tr>
+</table>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📌기술 스택
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-### `npm test`
+## 📌기능 목록 명세
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ✔ 스토어 상품목록 조회
 
-### `npm run build`
+-   API 호출 함수 구현 및 호출 결과 데이터 타입 정의 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   브랜드 상세 페이지 , 카테고리 상세페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   재사용 가능한 상품 목록 컴포넌트 제작 (!해당 예시 지우고 작성해주시면 됩니다!)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✔ 스토어 상품 상세조회
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   cypress를 이용한 e2e 테스트 코드 작성 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   재사용 가능한 동적 헤더 컴포넌트 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   사이드바 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   메인 페이지 구현 (!예시 지우고 작성해주시면 됩니다!)
+    -   라이브러리 없이 슬라이드 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   카테고리 목록 컴포넌트 제작 (!예시 지우고 작성해주시면 됩니다!)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ✔ 스토어 상품 주문
 
-### `npm run eject`
+-   스타일 환경셋팅 및 기본 레이아웃 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   고객센터 페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   선택한 1개의 질문만 답변이 토글되는 기능 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ✔ 스토어 상품 주문 내역확인
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   버튼 및 모달 컴포넌트 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   상품 상세 페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   상품 옵션 선택 기능 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ✔ 스토어 상품목록 등록 페이지
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   버튼 및 모달 컴포넌트 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   상품 상세 페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   상품 옵션 선택 기능 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
 
-## Learn More
+### ✔ 스토어 상품목록 관리 페이지
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   버튼 및 모달 컴포넌트 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   상품 상세 페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
+    -   상품 옵션 선택 기능 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🙋‍♂️ 프로젝트 소개
 
-### Code Splitting
+일정을 관리할 수 있는 웹 애플리케이션
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 서비스 특징
 
-### Analyzing the Bundle Size
+-   일정을 등록하거나 수정하거나 삭제할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📌 프로젝트 설치 및 시작
 
-### Making a Progressive Web App
+#### 프로젝트 클론
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```shell
+$ git clone https://github.com/wanted-pre-onboarding-frontend-6/wanted-pre-onboard-fe-5-best-practice.git
+```
 
-### Advanced Configuration
+#### 패키지 설치
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```shell
+$ npm install
+```
 
-### Deployment
+#### 서버 실행
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```shell
+$ npm run start
+```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📖 [Wiki](https://github.com/wanted-pre-onboarding-frontend-6/wanted-pre-onboard-fe-5-best-practice/wiki)
