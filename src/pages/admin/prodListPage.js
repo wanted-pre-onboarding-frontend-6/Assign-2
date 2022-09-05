@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ProdItem from '../../components/admin/prodList/prodItem';
-import Pagination from '../../components/admin/prodList/pagination';
-import SearchHeader from '../../components/admin/prodList/searchHeader';
+import AdminProdListItem from '../../components/admin/prodList/prodItem';
+import AdminProdListPagination from '../../components/admin/prodList/adminPagination';
+import AdminProdSearchHeader from '../../components/admin/prodList/searchHeader';
 import AdminProdService from '../../services/admin/adminProdService';
 
 const AdminProdListPage = () => {
@@ -60,20 +60,24 @@ const AdminProdListPage = () => {
 
     return (
         <ProdListPageMain>
-            <SearchHeader />
+            <AdminProdSearchHeader />
             <ProdItemContainer>
                 <ul>
                     {curData.map(it => (
-                        <ProdItem
+                        <AdminProdListItem
                             key={it.id}
                             onEditShowFlag={onEditShowFlag}
                             onRemoveProdItem={onRemoveProdItem}
                             data={it}
-                        ></ProdItem>
+                        ></AdminProdListItem>
                     ))}
                 </ul>
             </ProdItemContainer>
-            <Pagination pageLength={pageLength} curPage={curPage} setCurPage={setCurPage} />
+            <AdminProdListPagination
+                pageLength={pageLength}
+                curPage={curPage}
+                setCurPage={setCurPage}
+            />
         </ProdListPageMain>
     );
 };

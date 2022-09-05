@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Order = () => {
+    const navigate = useNavigate();
+
+    const prodName = useRef(sessionStorage.getItem('prodName'));
+    const prodCount = useRef(sessionStorage.getItem('prodCount'));
+    const prodIme = useRef(sessionStorage.getItem('prodImg'));
+    const price = useRef(sessionStorage.getItem('price'));
+
+    const onPaymentHandler = useCallback(() => {
+        navigate('/orders');
+    }, []);
+
     return (
         <Container>
             <LeftContainer>
@@ -86,13 +98,12 @@ const Order = () => {
                     </OrderInfoHeader>
                     <ProductContainer>
                         <div>
-                            <img />
+                            <img src={prodIme.current} />
                         </div>
                         <div>
-                            <div>상품명</div>
-                            <div>상품상세</div>
+                            <div>{prodName.current}</div>
                         </div>
-                        <div>가격</div>
+                        <div>{price.current} 원</div>
                     </ProductContainer>
                     <OrderSummaryContainer>
                         <ProductPrice>
@@ -117,7 +128,7 @@ const Order = () => {
                             </div>
                         </TotalPrice>
                     </OrderSummaryContainer>
-                    <PayButton>결제하기</PayButton>
+                    <PayButton onClick={onPaymentHandler}>결제하기</PayButton>
                 </OrderInfo>
             </RightContainer>
         </Container>
@@ -236,8 +247,13 @@ const OrderInfoHeader = styled(BuyerInfoHeader)``;
 const ProductContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 8px;
     border: 1px solid greenyellow;
+    & > div:first-child {
+        width: 64px;
+        height: 64px;
+    }
 `;
 
 const OrderSummaryContainer = styled.div``;

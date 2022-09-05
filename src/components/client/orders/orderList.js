@@ -97,13 +97,14 @@ const Img = styled.img`
 `;
 
 const State = styled.td`
- & > span {
-    font-weight: bold;
-    font-size: 12px;
-    color: white;
-    border-radius: 5px;
-    background: ${props => props.theme.mainColor};
-    padding: 3px;        
+    & > span {
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        border-radius: 5px;
+        background: ${props => props.theme.mainColor};
+        padding: 3px;
+    }
 `;
 
 const Detail = styled.div`

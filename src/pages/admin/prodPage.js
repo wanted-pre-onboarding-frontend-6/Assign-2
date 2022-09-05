@@ -30,6 +30,7 @@ export default AdminProdPage;
 const AdminProdContainer = styled.div`
     margin: 0 auto;
     padding: 32px 0;
+    max-width: 80%;
     max-height: calc(100vh - 48px);
     overflow-y: scroll;
 
