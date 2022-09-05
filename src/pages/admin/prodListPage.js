@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import AdminProdListItem from '../../components/admin/prodList/prodItem';
+import AdminProdListItem from '../../components/admin/prodList/ProdItem';
 import AdminProdListPagination from '../../components/admin/prodList/adminPagination';
-import AdminProdSearchHeader from '../../components/admin/prodList/searchHeader';
+import AdminProdSearchHeader from '../../components/admin/prodList/SearchHeader';
 import AdminProdService from '../../services/admin/adminProdService';
 
 const AdminProdListPage = () => {
