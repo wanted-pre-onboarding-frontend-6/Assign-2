@@ -14,7 +14,6 @@
 <td align="center"><a href="https://github.com/YSBINN"><img src="https://avatars.githubusercontent.com/YSBINN" width="100%" height="50%" /></a></td>
 <td align="center"><a href="https://github.com/Leejha"><img src="https://avatars.githubusercontent.com/Leejha" width="100%"  height="50%"/></a></td>
 <td align="center"><a href="https://github.com/vnfdusdl"><img src="https://avatars.githubusercontent.com/vnfdusdl" width="100%"  height="50%"/></a></td>
-<td align="center"><a href="https://github.com/LoggingCo"><img src="https://avatars.githubusercontent.com/LoggingCo" width="100%"  height="50%"/></a></td>
 <td align="center"><a href="https://github.com/seriparkdev"><img src="https://avatars.githubusercontent.com/seriparkdev" width="100%"  height="50%"/></a></td>
 </tr>
 <tr>
