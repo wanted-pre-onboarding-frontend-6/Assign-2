@@ -42,7 +42,7 @@
 
 ### ✔ MSW(Mock Service Worker)을 활용한 가상 데이터 API 적용
 -   MSW를 활용하여 Mock Data를 주고 받을 수 있도록 최대한 실무 환경에 적용 가능하도록 Mock Rest Server 서비스하였습니다.  
-    - MSW 적용 목록
+    - MSW 적용 목록 <br/>
         사용자
          - 상품 전체 조회 (GET: /api/goods&page=?)
          - 상품 상세조회(주문내역 조회) (GET: /api/goods/:goodsId)
