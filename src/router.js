@@ -29,7 +29,6 @@ const Router = () => {
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
                         <Route exact path="/admin/prod" element={<AdminProdPage />} />
                     </Route>
-                    <Route path="/orders" element={<Orders />} />
                 </Routes>
             </BrowserRouter>
         </>
