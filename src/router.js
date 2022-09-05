@@ -3,9 +3,13 @@ import AdminLoginPage from './pages/admin/loginPage';
 import AdminProdListPage from './pages/admin/prodListPage';
 import AdminProdPage from './pages/admin/prodPage';
 import GlobalStyle from './styles/global';
+import ClientRoute from './utils/ClientRoute';
 import AdminRoute from './utils/adminRoute';
 import Main from './pages/client/main/main';
 import ProdDetail from './pages/client/prodDetail';
+import Orders from './pages/client/orders/orders';
+import ProductPage from './pages/client/ProductListPage';
+import Order from './pages/client/order/order';
 
 const Router = () => {
     return (
@@ -13,13 +17,19 @@ const Router = () => {
             <BrowserRouter>
                 <GlobalStyle />
                 <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/prodDetail/:id" element={<ProdDetail />} />
+                    <Route element={<ClientRoute />}>
+                        <Route path="/" element={<Main />} />
+                        <Route path="/prodDetail/:id" element={<ProdDetail />} />
+                        <Route path="/fruitstore" element={<ProductPage />} />
+                        <Route path="/order" element={<Order />} />
+                        <Route path="/orders" element={<Orders />} />
+                    </Route>
                     <Route element={<AdminRoute />}>
                         <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
                         <Route exact path="/admin/prod" element={<AdminProdPage />} />
                     </Route>
+                    <Route path="/orders" element={<Orders />} />
                 </Routes>
             </BrowserRouter>
         </>

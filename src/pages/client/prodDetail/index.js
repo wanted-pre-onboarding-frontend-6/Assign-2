@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import prodDetailService from '../../../services/client/prodDetailService';
-import Footer from '../../../components/client/footer/footer';
 
 const ProdDetail = () => {
     const { id } = useParams();
@@ -40,7 +39,7 @@ const ProdDetail = () => {
         subImg,
         prodName,
         salePrice,
-        prodPrice,
+        originalPrice,
         option,
         choice,
     } = prodInfo;
@@ -137,7 +136,7 @@ const ProdDetail = () => {
                         </ProdTitleContainer>
                         <ProdPrices>
                             <ProdSalePrice>{numberWithCommas(salePrice)}원</ProdSalePrice>
-                            <ProdPrice>{numberWithCommas(prodPrice)}원</ProdPrice>
+                            <ProdPrice>{numberWithCommas(originalPrice)}원</ProdPrice>
                         </ProdPrices>
                     </ProdInfoHeaderContainer>
                     <ProdDescContainer>
@@ -204,7 +203,6 @@ const ProdDetail = () => {
                 <PreviewContainer>구매평</PreviewContainer>
                 <InquiryContainer>Q&A</InquiryContainer>
             </CsContainer>
-            <Footer />
         </>
     );
 };
@@ -214,6 +212,7 @@ export default ProdDetail;
 const Container = styled.div`
     display: flex;
     width: 100vw;
+    margin-top: 20px;
     border-bottom: 1px solid silver;
     margin-bottom: 30px;
     height: 90vh;
