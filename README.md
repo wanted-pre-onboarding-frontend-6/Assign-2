@@ -130,6 +130,9 @@ https://fruitte-renewal-fe-5.netlify.app/
             -   관리자 상품꽌리 노출 수정 (PUT: /api/admin/goods/:goodsId/showflag)
             -   관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
 
+<br/>
+<br/>
+
 ### ✔ fakeJS를 활용한 유연한 Mock Data 구현
 
 -   fakerJs를 활용하여 MSW를 이용한 Mock Data 통신 시 실제 데이터 환경과 비슷하게 구축하여 매번 다른 정보를 받아올 수 있도록 하였습니다. 이는 페이지네이션과 관련하여 실제 환경과 비슷한 데이터 통신을 구현할 수 있었습니다.
