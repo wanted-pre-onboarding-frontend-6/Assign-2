@@ -54,10 +54,6 @@ const GNBContainer = styled.div`
     display: flex;
 `;
 
-const LogoWrapper = styled.div`
-    margin: 0 20px;
-`;
-
 const GNBWrapper = styled.div`
     display: flex;
 `;
