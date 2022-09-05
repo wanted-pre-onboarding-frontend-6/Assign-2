@@ -20,13 +20,13 @@ const Router = () => {
                         <Route path="/" element={<Main />} />
                         <Route path="/fruitstore" element={<ProductPage />} />
                         <Route path="/order" element={<Order />} />
+                        <Route path="/orders" element={<Orders />} />
                     </Route>
                     <Route element={<AdminRoute />}>
                         <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
                         <Route exact path="/admin/prod" element={<AdminProdPage />} />
                     </Route>
-                    <Route path="/orders" element={<Orders />} />
                 </Routes>
             </BrowserRouter>
         </>
