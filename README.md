@@ -44,18 +44,19 @@
 
 -   MSW를 활용하여 Mock Data를 주고 받을 수 있도록 최대한 실무 환경에 적용 가능하도록 Mock Rest Server 서비스하였습니다.
 
-    -   MSW 적용 목록
-        사용자
+    -   MSW 적용 목록 <br/>
 
-        -   상품 전체 조회 (GET: /api/goods&page=?)
-        -   상품 상세조회(주문내역 조회) (GET: /api/goods/:goodsId)
+        -   사용자
 
-        관리자
+            -   상품 전체 조회 (GET: /api/goods&page=?)
+            -   상품 상세조회(주문내역 조회) (GET: /api/goods/:goodsId)
 
-        -   관리자 로그인 (POST: /api/admin/user)
-        -   관리자 상품관리 목록 조회 (GET: /api/admin/goods&page=?)
-        -   관리자 상품꽌리 노출 수정 (PUT: /api/admin/goods/:goodsId/showflag)
-        -   관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
+        -   관리자
+
+            -   관리자 로그인 (POST: /api/admin/user)
+            -   관리자 상품관리 목록 조회 (GET: /api/admin/goods&page=?)
+            -   관리자 상품꽌리 노출 수정 (PUT: /api/admin/goods/:goodsId/showflag)
+            -   관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
 
 ### ✔ fakeJS를 활용한 유연한 Mock Data 구현
 
