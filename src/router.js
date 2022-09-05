@@ -17,6 +17,7 @@ const Router = () => {
             <BrowserRouter>
                 <GlobalStyle />
                 <Routes>
+                    {/* client */}
                     <Route element={<ClientRoute />}>
                         <Route path="/" element={<Main />} />
                         <Route path="/prodDetail/:id" element={<ProdDetail />} />
@@ -24,8 +25,9 @@ const Router = () => {
                         <Route path="/order" element={<Order />} />
                         <Route path="/orders" element={<Orders />} />
                     </Route>
+                     {/* admin */}
+                    <Route path="/admin" element={<AdminLoginPage />} />
                     <Route element={<AdminRoute />}>
-                        <Route path="/admin" element={<AdminLoginPage />} />
                         <Route exact path="/admin/prodList" element={<AdminProdListPage />} />
                         <Route exact path="/admin/prod" element={<AdminProdPage />} />
                     </Route>

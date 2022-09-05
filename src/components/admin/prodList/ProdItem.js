@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import CommonButton from '../common/button';
-import CommonLabel from '../common/label';
+import CommonButton from '../../common/button';
+import CommonLabel from '../../common/label';
 
 const ProdItem = ({ data, onEditShowFlag, onRemoveProdItem }) => {
     const changedPrice = data.salePrice.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
