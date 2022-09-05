@@ -2,10 +2,22 @@
 
 ## 📌배포
 
-👉 [배포링크]()
+=======
+
+# ✔️ Fruitte Store
+
+## 📌 프로젝트 소개
+
+Fruitte의 스토어 리뉴얼 개발
+
+## 📌 배포
+
+https://fruitte-renewal-fe-5.netlify.app/
 <br />
 
-## 📌팀원 소개
+## 📌 팀원 소개
+
+<br/>
 
 <table align="center">
 <tr >
@@ -33,6 +45,58 @@
 <td align="center"><b>FE Developer</b></td>
 </tr>
 </table>
+
+## 📌 프로젝트 구조
+
+<details>
+<summary>open</summary>
+
+```
+├─assets
+│  ├─client
+│  └─img
+├─components
+│  ├─admin
+│  │  ├─login
+│  │  ├─prod
+│  │  │  ├─prodImage
+│  │  │  │  └─dropZone
+│  │  │  ├─prodinfo
+│  │  │  │  ├─detail
+│  │  │  │  └─image
+│  │  │  └─table
+│  │  └─prodList
+│  ├─client
+│  │  ├─footer
+│  │  ├─header
+│  │  ├─orders
+│  │  └─productList
+│  └─common
+│      ├─button
+│      ├─input
+│      └─layout
+│          └─adminLayout
+│              ├─header
+│              └─side
+│                  ├─list
+│                  └─profile
+├─hooks
+├─mocks
+├─pages
+│  ├─admin
+│  └─client
+│      ├─main
+│      ├─order
+│      ├─orders
+│      └─prodDetail
+├─services
+│  ├─admin
+│  └─client
+├─styles
+└─utils
+```
+
+</details>
 
 ## 📌기술 스택
 
