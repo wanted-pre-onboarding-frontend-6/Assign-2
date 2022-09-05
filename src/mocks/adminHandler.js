@@ -34,4 +34,11 @@ export const AdminHandler = [
         const { showFlag, id } = req.body;
         return res(ctx.json({ showFlag, id }));
     }),
+
+    rest.post('https:/fruitte.co/api/admin/user/login', (req, res, ctx) => {
+        const { email, password } = req.body;
+        if (email === 'test' && password === '1234') {
+            return res(ctx.json({ message: true, data: { token: faker.lorem.sentence() } }));
+        } else return res(ctx.json({ message: false }));
+    }),
 ];

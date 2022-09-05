@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ProdItem from '../../components/admin/prodList/ProdItem';
-import Pagination from '../../components/admin/prodList/Pagination';
-import SearchHeader from '../../components/admin/prodList/SearchHeader';
-import AdminService from '../../services/admin/adminService';
+import AdminProdListItem from '../../components/admin/prodList/prodItem';
+import AdminProdListPagination from '../../components/admin/prodList/adminPagination';
+import AdminProdSearchHeader from '../../components/admin/prodList/searchHeader';
+import AdminProdService from '../../services/admin/adminProdService';
 
 const AdminProdListPage = () => {
     const [curData, setCurData] = useState([]);
@@ -12,7 +12,7 @@ const AdminProdListPage = () => {
 
     const getProdList = async () => {
         try {
-            const res = await AdminService.get(curPage);
+            const res = await AdminProdService.get(curPage);
 
             setCurData(res.data.data);
             setPageLength(res.data.totalPage);
@@ -23,10 +23,14 @@ const AdminProdListPage = () => {
         }
     };
 
+    useEffect(() => {
+        getProdList();
+    }, [curPage]);
+
     const onEditShowFlag = useCallback(
         async (showFlag, id) => {
             try {
-                const res = await AdminService.edit({ showFlag, id });
+                const res = await AdminProdService.edit({ showFlag, id });
                 if (res.status === 200) {
                     const data = [...curData];
                     data.find(v => v.id === res.data.id).showFlag = res.data.showFlag;
@@ -42,7 +46,7 @@ const AdminProdListPage = () => {
 
     const onRemoveProdItem = async id => {
         try {
-            const res = await AdminService.remove(id);
+            const res = await AdminProdService.remove(id);
             if (res.status === 200) {
                 const resId = res.data.slice(1);
                 const newData = curData.filter(it => it.id !== resId);
@@ -54,26 +58,26 @@ const AdminProdListPage = () => {
         }
     };
 
-    useEffect(() => {
-        getProdList();
-    }, [curPage]);
-
     return (
         <ProdListPageMain>
-            <SearchHeader />
+            <AdminProdSearchHeader />
             <ProdItemContainer>
                 <ul>
                     {curData.map(it => (
-                        <ProdItem
+                        <AdminProdListItem
                             key={it.id}
                             onEditShowFlag={onEditShowFlag}
                             onRemoveProdItem={onRemoveProdItem}
                             data={it}
-                        ></ProdItem>
+                        ></AdminProdListItem>
                     ))}
                 </ul>
             </ProdItemContainer>
-            <Pagination pageLength={pageLength} curPage={curPage} setCurPage={setCurPage} />
+            <AdminProdListPagination
+                pageLength={pageLength}
+                curPage={curPage}
+                setCurPage={setCurPage}
+            />
         </ProdListPageMain>
     );
 };

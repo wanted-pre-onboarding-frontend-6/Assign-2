@@ -1,6 +1,6 @@
 import { axiosApiInstance } from '../../utils/axios';
 
-export default class AdminService {
+export default class AdminProdService {
     static get(curPage) {
         return axiosApiInstance.get(`/admin/goods?page=${curPage}`);
     }

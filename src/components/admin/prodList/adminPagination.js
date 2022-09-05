@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Pagination = ({ pageLength, curPage, setCurPage }) => {
+const AdminProdListPagination = ({ pageLength, curPage, setCurPage }) => {
     const onClickDecrease = () => {
         setCurPage(prev => parseInt(prev) - 1);
     };
@@ -37,7 +37,7 @@ const Pagination = ({ pageLength, curPage, setCurPage }) => {
     );
 };
 
-export default Pagination;
+export default AdminProdListPagination;
 
 const PaginationContainer = styled.section`
     position: absolute;

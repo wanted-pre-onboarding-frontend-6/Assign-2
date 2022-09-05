@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import CommonLabel from '../common/label';
+import CommonLabel from '../../common/label';
 
-const SearchHeader = () => {
+const AdminProdSearchHeader = () => {
     return (
         <SearchHeaderContainer>
             <SerchInputWrapper>
@@ -22,7 +22,7 @@ const SearchHeader = () => {
     );
 };
 
-export default SearchHeader;
+export default AdminProdSearchHeader;
 
 const SearchHeaderContainer = styled.header`
     position: relative;

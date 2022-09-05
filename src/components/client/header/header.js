@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 const LogoWrapper = styled.div`
     width: 200px;
     margin-left: 20px;
-
+    margin: 0 20px;
     img {
         width: 100%;
         height: 100%;
