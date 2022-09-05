@@ -131,7 +131,6 @@ https://fruitte-renewal-fe-5.netlify.app/
             -   관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
 
 <br/>
-<br/>
 
 ### ✔ fakeJS를 활용한 유연한 Mock Data 구현
 
