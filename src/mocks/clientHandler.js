@@ -36,7 +36,7 @@ export const ClientHandler = [
             prodImg: { src: faker.image.image() },
             subImg: Array(faker.datatype.number({ min: 1, max: 5 }))
                 .fill()
-                .map((_, idx) => ({ id: idx, src: faker.image.image() })),
+                .map((_, id) => ({ id, src: faker.image.image() })),
             prodName: faker.lorem.words(faker.datatype.number({ min: 3, max: 5 })),
             originalPrice: faker.commerce.price(20000, 30000, 0),
             salePrice: faker.commerce.price(10000, 20000, 0),
