@@ -36,15 +36,16 @@
 
 ## 📌기술 스택
 
-![](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
 ## 📌기능 목록 명세
 
 ### ✔ 스토어 상품목록 조회
 
--   API 호출 함수 구현 및 호출 결과 데이터 타입 정의 (!해당 예시 지우고 작성해주시면 됩니다!)
--   브랜드 상세 페이지 , 카테고리 상세페이지 구현 (!해당 예시 지우고 작성해주시면 됩니다!)
-    -   재사용 가능한 상품 목록 컴포넌트 제작 (!해당 예시 지우고 작성해주시면 됩니다!)
+-   페이지당 최대 32개 상품까지 조회
+-   상품을 클릭시 해당 상품 페이지 이동
+-   페이지네이션을 이용하여 효율적인 페이지 탐색
+-   좋아요와 리뷰 갯수 시각화에 따른 유저 경험 향상
 
 ### ✔ 스토어 상품 상세조회
 
@@ -92,7 +93,7 @@
 #### 프로젝트 클론
 
 ```shell
-$ git clone https://github.com/wanted-pre-onboarding-frontend-6/wanted-pre-onboard-fe-5-best-practice.git
+$ git clone https://github.com/wanted-pre-onboarding-frontend-6/Assign-2.git
 ```
 
 #### 패키지 설치
@@ -106,5 +107,3 @@ $ npm install
 ```shell
 $ npm run start
 ```
-
-## 📖 [Wiki](https://github.com/wanted-pre-onboarding-frontend-6/wanted-pre-onboard-fe-5-best-practice/wiki)
