@@ -9,7 +9,7 @@
 
 <table align="center">
 <tr >
-<td align="center"><a href=""><img src="https://github.com/LoggingCo" width="100%"  height="50%" /></a></td>
+<td align="center"><a href=""><img src="https://github.com/LoggingCo" src="https://avatars.githubusercontent.com/LoggingCo" width="100%"  height="50%" /></a></td>
 <td align="center"><a href="https://github.com/sming0112"><img src="https://avatars.githubusercontent.com/sming0112" width="100%"  height="65%"/></a></td>
 <td align="center"><a href="https://github.com/YSBINN"><img src="https://avatars.githubusercontent.com/YSBINN" width="100%" height="50%" /></a></td>
 <td align="center"><a href="https://github.com/Leejha"><img src="https://avatars.githubusercontent.com/Leejha" width="100%"  height="50%"/></a></td>
@@ -21,7 +21,7 @@
 <td align="center"><b>성민규</b></td>
 <td align="center"><b>임상빈</b></td>
 <td align="center"><b>이재하</b></td>
-<td align="center"><b>김성용</b></td>
+<td align="center"><b>김초연</b></td>
 <td align="center"><b>박세리</b></td>
 </tr>
 <tr>
@@ -36,7 +36,7 @@
 
 ## 📌기술 스택
 
-![](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![](https://img.shields.io/badge/Next.js-74D4CF?style=for-the-badge&logo=next.js&logoColor=black) ![](https://img.shields.io/badge/Cypress-49484D?style=for-the-badge&logo=cypress&logoColor=white)
+![](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
 ## 📌기능 목록 명세
 
