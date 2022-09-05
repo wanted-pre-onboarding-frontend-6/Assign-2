@@ -1,5 +1,3 @@
-# Fruitte의 스토어 리뉴얼
-
 # ✔️ Fruitte Store
 
 ## 📌 프로젝트 소개
@@ -41,6 +39,11 @@ https://fruitte-renewal-fe-5.netlify.app/
 <td align="center"><b>FE Developer</b></td>
 </tr>
 </table>
+
+## 📌프로젝트 과정 소개
+
+    ### [Git전략](https://github.com/wanted-pre-onboarding-frontend-6/Assign-1/wiki/Git-%EC%A0%84%EB%9E%B5)
+    ### [커밋 컨벤션 및 코딩 컨벤션](https://github.com/wanted-pre-onboarding-frontend-6/Assign-1/wiki/%EC%BB%A4%EB%B0%8B-%EC%BB%A8%EB%B2%A4%EC%85%98-%EB%B0%8F-%EC%BD%94%EB%94%A9-%EC%BB%A8%EB%B2%A4%EC%85%98)
 
 ## 📌 프로젝트 구조
 
