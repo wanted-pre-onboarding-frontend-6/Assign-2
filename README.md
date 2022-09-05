@@ -43,17 +43,18 @@
 ### ✔ MSW(Mock Service Worker)을 활용한 가상 데이터 API 적용
 -   MSW를 활용하여 Mock Data를 주고 받을 수 있도록 최대한 실무 환경에 적용 가능하도록 Mock Rest Server 서비스하였습니다.  
     - MSW 적용 목록
-       - 사용자
-        - 상품 전체 조회 (GET: /api/goods&page=?)
-        - 상품 상세조회(주문내역 조회) (GET: /api/goods/:goodsId)
+        사용자
+         - 상품 전체 조회 (GET: /api/goods&page=?)
+         - 상품 상세조회(주문내역 조회) (GET: /api/goods/:goodsId)
 
-       - 관리자
-        - 관리자 로그인 (POST: /api/admin/user)
-        - 관리자 상품관리 목록 조회 (GET: /api/admin/goods&page=?)
-        - 관리자 상품꽌리 노출 수정 (PUT: /api/admin/goods/:goodsId/showflag)
-        - 관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
+        관리자
+         - 관리자 로그인 (POST: /api/admin/user)
+         - 관리자 상품관리 목록 조회 (GET: /api/admin/goods&page=?)
+         - 관리자 상품꽌리 노출 수정 (PUT: /api/admin/goods/:goodsId/showflag)
+         - 관리자 상품관리 목록 삭제 (DELETE /api/admin/goods/:goodsId)
         
-#### ✔ fakeJS
+### ✔ fakeJS를 활용한 유연한 Mock Data 구현
+
 - fakerJs를 활용하여 MSW를 이용한 Mock Data 통신 시 실제 데이터 환경과 비슷하게 구축하여 매번 다른 정보를 받아올 수 있도록 하였습니다. 이는 페이지네이션과 관련하여 실제 환경과 비슷한 데이터 통신을 구현할 수 있었습니다.
 
         
@@ -84,6 +85,15 @@
 - UI/UX를 기반으로 스토어 상품 주문 레이아웃을 구성하고 디자인을 함.
 - 주문 내역을 컴포넌트로 분리하여 구성
 - msw를 사용하여 코드 내 axios로 목데이터를 가져옴
+
+
+### ✔ 관리자 로그인 페이지
+-   관리자는 관리자 계정으로 로그인할 수 있도록 구현하였습니다.
+-   관리자 로그인 
+```shell
+ID: test
+PW: 1234
+```
 
 ### ✔ 관리자 상품목록 등록 페이지
 
